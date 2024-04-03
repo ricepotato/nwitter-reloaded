@@ -12,6 +12,7 @@ import {
 } from "../components/auth-components";
 import GithubButton from "../components/github-btn";
 import { auth } from "../firebase";
+import GoogleButton from "../components/google-btn";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -77,6 +78,7 @@ export default function Login() {
         Don't have an account? <Link to="/create-account">Create Account</Link>
       </Switcher>
       <GithubButton />
+      <GoogleButton />
     </Wrapper>
   );
 }
