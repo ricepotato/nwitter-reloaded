@@ -1,8 +1,55 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+import Layout from "./components/layout";
+import CreateAccount from "./routes/create-account";
+import Home from "./routes/home";
+import Login from "./routes/login";
+import Profile from "./routes/profile";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/create-account",
+    element: <CreateAccount />,
+  },
+]);
+
+const GlobalStyles = createGlobalStyle`
+  ${reset};
+  * {
+    box-sizing: border-box;
+  }
+  body{
+    background-color: black;
+    color:white;
+  }
+`;
 
 function App() {
   return (
-    <h1>hello app</h1>
-  )
+    <>
+      <GlobalStyles />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
-export default App
+export default App;
