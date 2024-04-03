@@ -10,6 +10,7 @@ import {
   Title,
   Wrapper,
 } from "../components/auth-components";
+import GithubButton from "../components/github-btn";
 import { auth } from "../firebase";
 
 export default function CreateAccount() {
@@ -92,6 +93,7 @@ export default function CreateAccount() {
       <Switcher>
         Already have an account? <Link to="/login">Login</Link>
       </Switcher>
+      <GithubButton />
     </Wrapper>
   );
 }
